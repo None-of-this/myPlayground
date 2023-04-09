@@ -1,3 +1,4 @@
+@import "./wave.css";
 
 .game-container {
     display: flex;
@@ -6,10 +7,7 @@
     flex-direction: column;
 }
 
-body {
 
-    background-color: #E8E8E8;
-}
 
 h1 {
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -28,6 +26,17 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 svg {
     width: 60vw;
     height: 60vh;
-    background-color: blueviolet;
+    background-color: rgb(248, 255, 145);
+    overflow:hidden;
+    -webkit-user-select:none;
+    user-select:none;
+    position:relative
+}
 
+circle {
+    color: blue;
+}
+
+body {
+    background-color: #e8e8e8;
 }
