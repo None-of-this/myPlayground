@@ -1,10 +1,14 @@
 
 .game-container {
     display: flex;
-    border: solid;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+body {
+
+    background-color: #E8E8E8;
 }
 
 h1 {
@@ -13,13 +17,17 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 }
 
 #fire-range {
-    width: 350px;
-    height: 350px;
+    width: 60vw;
+    height: 60vh;
     border: solid;
+    background-color: blueviolet;
+    
 }
 
-#aim {
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    position: relative;
+
+svg {
+    width: 60vw;
+    height: 60vh;
+    background-color: blueviolet;
+
 }
