@@ -1,0 +1,25 @@
+
+.game-container {
+    display: flex;
+    border: solid;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 80px;
+}
+
+#fire-range {
+    width: 350px;
+    height: 350px;
+    border: solid;
+}
+
+#aim {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+}
