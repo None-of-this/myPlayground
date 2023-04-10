@@ -12,6 +12,7 @@
 h1 {
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 80px;
+    margin: 0px;
 }
 
 .btn{
@@ -45,4 +46,21 @@ circle {
 
 body {
     background-color: #e8e8e8;
+}
+
+.countdown {
+    font-size: 48px;
+    color: rgb(219, 9, 9);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* transition: none; */
+    transition: 0.5s ease-in;
+  }
+
+  .countdown-active {
+    color: rgb(174, 145, 255);
+    transition: 0.5s ease-in;
 }
