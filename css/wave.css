@@ -8,13 +8,13 @@
     border-radius:50%;
     z-index:0;
     background: -webkit-radial-gradient(circle,#fff,#b91f1f);
-    background: -moz-radial-gradient(circle,#fff,#701111);
-    background: radial-gradient(circle,#fff,#a52121);
-    -webkit-transition:all 1.5s ease-out;
-    -moz-transition:all 1.5s ease-out;
-    -ms-transition:all 1.5s ease-out;
-    -o-transition:all 1.5s ease-out;
-    transition:all 1.5s ease-out;
+    background: -moz-radial-gradient(circle,#311717,#701111);
+    background: radial-gradient(circle,#ffffff,#ff0000);
+    -webkit-transition:all 0.5s ease-out;
+    -moz-transition:all 0.5s ease-out;
+    -ms-transition:all 0.5s ease-out;
+    -o-transition:all 0.5s ease-out;
+    transition:all 0.7s ease-out;
     -webkit-transform:scale(0,0) translate3d(0,0,0);
     -moz-transform:scale(0,0) translate3d(0,0,0);
     -ms-transform:scale(0,0) translate3d(0,0,0);
@@ -32,13 +32,3 @@
     opacity:0;
   }
 
-  .btn{
-    position:relative;
-    line-height:50px;
-    text-align:center;
-    border:3px solid #959;
-    cursor:pointer;
-    overflow:hidden;
-    -webkit-user-select:none;
-    user-select:none;
-  }

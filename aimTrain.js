@@ -18,32 +18,17 @@ function hit() {
 
 // svgBox.addEventListener('click', shoot);
 
-// function shoot(event) {
-//     console.log(event);
-//     let wave = document.createElement('div');
-//     wave.classList.add('wave');
-//     wave.style.left = event.clientX;
-//     wave.style.top = event.clientY;
-//     svgBox.appendChild(wave);
-//     setTimeout(function(){
-//         wave.classList.add('wave-ani');
-//         console.log(wave)
-//     });
-//     setTimeout(function(){
-//             svgBox.removeChild(wave);
-//           },1500);
-//     }
 
 (function(){
-    var btn = document.querySelector('.btn');
-    var btnTop = btn.offsetTop;
-    var btnLeft = btn.offsetLeft;
+    let btn = document.querySelector('.btn');
+    let btnTop = btn.offsetTop;
+    let btnLeft = btn.offsetLeft;
     
     btn.addEventListener('click',function(e){
-      var div = document.createElement('div');
+      let div = document.createElement('div');
       div.classList.add('wave');
-      div.style.left = e.clientX - btnLeft - 3 + 'px';
-      div.style.top = e.clientY - btnTop - 3 + 'px';
+      div.style.left = e.clientX - btnLeft + 'px';
+      div.style.top = e.clientY - btnTop + 'px';
       btn.appendChild(div);
       setTimeout(function(){
         div.classList.add('wave-ani');

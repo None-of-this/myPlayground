@@ -14,23 +14,29 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     font-size: 80px;
 }
 
-#fire-range {
+.btn{
     width: 60vw;
     height: 60vh;
-    border: solid;
-    background-color: blueviolet;
-    
-}
+    position:relative;
+    line-height:50px;
+    text-align:center;
+    cursor:pointer;
+    overflow:hidden;
+    -webkit-user-select:none;
+    user-select:none;
+  }
 
 
 svg {
     width: 60vw;
     height: 60vh;
-    background-color: rgb(248, 255, 145);
     overflow:hidden;
     -webkit-user-select:none;
     user-select:none;
-    position:relative
+    position:relative;
+    background-color: rgb(248, 255, 145);
+    border-radius: 5px;
+
 }
 
 circle {
