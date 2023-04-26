@@ -44,6 +44,10 @@ circle {
     color: blue;
 }
 
+.circle-inactive {
+    display: none;
+}
+
 body {
     background-color: #e8e8e8;
 }

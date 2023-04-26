@@ -14,23 +14,20 @@ startBtn.addEventListener("click", start)
 function start() {
   console.log('ok');
   btn.appendChild(countdown);
-
   for(let i = 3; i >= 0 ; i--){
     setTimeout(() => {
       countdown.innerText = `${i}`;
-      countdown.classList.toggle("countdown-active");
-      // if(i === 0) {
-      //   countdown.remove()
-      // }
+      // countdown.classList.toggle("countdown-active");
+      if(i === 0) {
+        countdown.remove();
+        hit(false);
+        hitCount = 0;
+        aim.classList.remove('circle-inactive')
+        stopwatch();
+      }
     }, (3 - i) * 1000);
   }
 }
-
-
-
-
-
-
 
 let x;
 let y;
@@ -41,14 +38,42 @@ let hitCount = 0
 aim.addEventListener("click", hit);
 //* this is giving a new position to the aim, incrementing the count
 
-function hit() {
+function hit(hitted = true) {
   x = Math.floor(Math.random() * clientWidth);
   y = Math.floor(Math.random() * clientHeight);
   aim.setAttribute('cx', x);
   aim.setAttribute('cy', y);
-  hitCount += 1;
-  counter.textContent = `Hit Count : ${hitCount}`
+  if (hitted) {
+    hitCount += 1;
+    counter.textContent = `Hit Count : ${hitCount}`
+  }
 }
+
+
+let timer = document.querySelector('.stopwatch')
+let [milliseconds, seconds] = [0,3];
+
+console.log(timer)
+
+function stopwatch() {
+  int = setInterval(moving, 1000);
+}
+
+function moving() {
+  console.log(seconds);
+  seconds--;
+  if (seconds === 0) {
+    clearInterval(int)
+  }
+  timer.innerHTML = `${seconds}`
+}
+
+
+
+
+
+
+
 
 
 //* this is the wave fonction, might be use better to the misses count

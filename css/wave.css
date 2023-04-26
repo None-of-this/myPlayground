@@ -11,7 +11,7 @@
     /** this are the color for the wave  */
     background: -webkit-radial-gradient(circle,#fff,#b91f1f);
     background: -moz-radial-gradient(circle,#311717,#701111);
-    background: radial-gradient(circle,#ffffff,#ff0000);
+    background: radial-gradient(circle,#18ff03,#1100ff);
     -webkit-transition:all 0.5s ease-out;
     -moz-transition:all 0.5s ease-out;
     -ms-transition:all 0.5s ease-out;
