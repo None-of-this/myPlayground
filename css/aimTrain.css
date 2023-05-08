@@ -11,6 +11,11 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     width: 60vw;
 }
 
+h1::first-letter{
+  color: rgb(219, 9, 9);
+}
+
+
 /* this is the game itself  */
 
 .game-container {
@@ -32,6 +37,12 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     user-select:none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 5px;
+    background: white;
+    color: black;
+    border: solid;
+    border-width: 5px;
+    border-color: black;
+    margin-top: 10px;
 }
 
 
@@ -42,12 +53,6 @@ svg {
     -webkit-user-select:none;
     user-select:none;
     position:relative;
-    background: white;
-    color: black;
-    border: solid;
-    border-width: 5px;
-    border-color: black;
-    margin-top: 10px;
 }
 
 circle {
