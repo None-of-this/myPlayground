@@ -114,6 +114,4 @@ function gameActive(){
 
   };
 
-function jtm(){
-  console.log("jtm")
-}
+
