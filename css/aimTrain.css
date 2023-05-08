@@ -4,17 +4,17 @@ body {
     background-color: #f3f3f3;
 }
 
-h1 span::first-letter {
+h1::first-letter {
   color: rgb(219, 9, 9);
+  font-size: 100px;
 }
 
 h1 {
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 120px;
-    margin: 0px;
+    font-size: 80px;
+    margin: -20px;
     width: 60vw;
 }
-
 
 
 /* this is the game itself  */
@@ -37,7 +37,6 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     -webkit-user-select:none;
     user-select:none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    border-radius: 5px;
     background: white;
     color: black;
     border: solid;
@@ -112,6 +111,7 @@ circle {
     font-size: 20px;
     font-family: monospace;
     padding-top: 6px;
+    margin-top: 10px;
 }
 
 .hide {
