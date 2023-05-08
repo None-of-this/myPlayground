@@ -13,7 +13,7 @@ countdown.classList.add('countdown');
 
 startBtn.addEventListener("click", start)
 
-//* 
+//*
 
 function start() {
   btn.appendChild(countdown);
@@ -89,7 +89,7 @@ let btnTop = btn.offsetTop;
 let btnLeft = btn.offsetLeft;
 let missedClick = 0;
 
-function gameActive(){  
+function gameActive(){
   btn.addEventListener('click',function(e){
     missedClick += 1;
     miss.innerHTML = `${missedClick - hitCount}`
@@ -111,5 +111,9 @@ function gameActive(){
     btn.addEventListener('mousedown',function(){
       btn.classList.remove('btn-active');
     });
-    
+
   };
+
+function jtm(){
+  console.log("jtm")
+}
