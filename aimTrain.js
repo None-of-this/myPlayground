@@ -57,7 +57,7 @@ function hit(hitted = true) {
 }
 
 
-let [milliseconds, seconds] = [0,3];
+let [milliseconds, seconds] = [0,10];
 
 function stopwatch() {
   int = setInterval(moving, 1000);
@@ -112,4 +112,5 @@ function result() {
   aim.classList.add('circle-inactive');
   timer.classList.add('hide');
   startBtn.classList.remove('hide');
+  console.log(`you're accruacy is ${(hitCount / missedClick) * 100}%`)
 }
