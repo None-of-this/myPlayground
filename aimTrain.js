@@ -103,6 +103,8 @@ function gameActive(){
 
   };
 
+
+
 //* this is the function that return the result to the user
 //* and stop all the features of the game
 
@@ -113,3 +115,4 @@ function result() {
   timer.classList.add('hide');
   startBtn.classList.remove('hide');
 }
+
