@@ -86,13 +86,21 @@ circle {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, fr));
     grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-@media (min-width: 600px) {
+@media (max-width: 800px) {
     .board {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    svg {
+        height: 41vh;
+    }
+
+    .btn {
+        height: 41vh;
     }
 }
 

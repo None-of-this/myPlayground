@@ -4,7 +4,6 @@ const svgBox = document.querySelector('svg')
 const counter = document.querySelector('.counter')
 const btn = document.querySelector('.btn');
 const miss = document.querySelector('.miss')
-
 const startBtn = document.querySelector('.startBtn')
 let timer = document.querySelector('.stopwatch')
 
@@ -16,6 +15,9 @@ startBtn.addEventListener("click", start)
 //*
 
 function start() {
+  startBtn.removeEventListener('click', start);
+  hitCount = 0
+  missedClick = 0
   btn.appendChild(countdown);
   for(let i = 3; i >= 0 ; i--){
     setTimeout(() => {
@@ -28,8 +30,9 @@ function start() {
         aim.classList.remove('circle-inactive');
         timer.classList.remove('hide');
         startBtn.classList.add('hide');
+        seconds = 3;
         stopwatch();
-        gameActive()
+        gameActive();
       }
     }, (3 - i) * 1000);
   }
@@ -79,7 +82,9 @@ let btnLeft = btn.offsetLeft;
 let missedClick = 0;
 
 function gameActive(){
-  btn.addEventListener('click',function(e){
+
+  btn.addEventListener('click', clicking, true)
+  function clicking(e) {
     missedClick += 1;
     miss.innerHTML = `${missedClick - hitCount}`
     let div = document.createElement('div');
@@ -87,19 +92,21 @@ function gameActive(){
     div.style.left = e.clientX - btnLeft + 'px';
     div.style.top = e.clientY - btnTop + 'px';
     btn.appendChild(div);
+
     setTimeout(function(){
       div.classList.add('wave-ani');
     });
     setTimeout(function(){
       btn.removeChild(div);
       },1500);
-    });
-    btn.addEventListener('mousedown',function(){
-      btn.classList.add('btn-active');
-    });
-    btn.addEventListener('mousedown',function(){
-      btn.classList.remove('btn-active');
-    });
+    };
+
+  btn.addEventListener('mousedown',function(){
+    btn.classList.add('btn-active');
+  });
+  btn.addEventListener('mousedown',function(){
+    btn.classList.remove('btn-active');
+  });
 
   };
 
@@ -114,5 +121,7 @@ function result() {
   aim.classList.add('circle-inactive');
   timer.classList.add('hide');
   startBtn.classList.remove('hide');
-  console.log(`you're accruacy is ${(hitCount / missedClick) * 100}%`)
+  console.log(`you're accruacy is ${(hitCount / missedClick) * 100}%`);
+  startBtn.addEventListener("click", start);
+
 }
