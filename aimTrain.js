@@ -57,7 +57,7 @@ function hit(hitted = true) {
 }
 
 
-let [milliseconds, seconds] = [0,30];
+let [milliseconds, seconds] = [0,3];
 
 function stopwatch() {
   int = setInterval(moving, 1000);
@@ -66,22 +66,11 @@ function stopwatch() {
 function moving() {
   seconds--;
   if (seconds === 0) {
-    clearInterval(int)
-    result()
+    clearInterval(int);
+    result();
   }
   timer.innerHTML = `${seconds}.`
 }
-
-function result() {
-  console.log("ok dak")
-}
-
-
-
-
-
-
-
 
 //* this is the wave fonction, might be use better to the misses count
 
@@ -114,4 +103,16 @@ function gameActive(){
 
   };
 
+
+
+//* this is the function that return the result to the user
+//* and stop all the features of the game
+
+function result() {
+  console.log(hitCount);
+  console.log(missedClick);
+  aim.classList.add('circle-inactive');
+  timer.classList.add('hide');
+  startBtn.classList.remove('hide');
+}
 
