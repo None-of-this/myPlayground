@@ -10,14 +10,26 @@
     <div class="container">
         <div class="game-container">
             <h1>Aim Trainer</h1>
-            <p class="stopwatch"> 30 : 00 </p>
-            <p class="counter"> count : 0 </p>
-                <div class="btn">
-                    <svg width="350" height="350">
-                        <circle class="circle-inactive" cx="50" cy="50" r="10" fill="#a52121" />
-                    </svg>
+            <div class="gameItself">
+                <div class="board">
+                    <div class="box">hit
+                        <p class="counter"> 0 </p>
+                    </div>
+                    <div class="box stopwatch-box">
+                        <p class="stopwatch hide"> 30s</p>
+                        <p class="startBtn"> start </p>
+                    </div>
+                    <div class="box">missed
+                        <p class="miss"> 0 </p>
+                    </div>
+
                 </div>
-            <button class="startBtn"> start </button>
+                    <div class="btn">
+                        <svg width="350" height="350">
+                            <circle class="circle-inactive" cx="50" cy="50" r="10" fill="0094ff" />
+                        </svg>
+            </div>
+                </div>
         </div>
     </div>
     <script src="aimTrain.js"></script>

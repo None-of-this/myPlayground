@@ -3,16 +3,19 @@ const aim = document.querySelector('circle');
 const svgBox = document.querySelector('svg')
 const counter = document.querySelector('.counter')
 const btn = document.querySelector('.btn');
+const miss = document.querySelector('.miss')
 
 const startBtn = document.querySelector('.startBtn')
+let timer = document.querySelector('.stopwatch')
 
 let countdown = document.createElement('h2');
 countdown.classList.add('countdown');
 
 startBtn.addEventListener("click", start)
 
+//* 
+
 function start() {
-  console.log('ok');
   btn.appendChild(countdown);
   for(let i = 3; i >= 0 ; i--){
     setTimeout(() => {
@@ -22,8 +25,11 @@ function start() {
         countdown.remove();
         hit(false);
         hitCount = 0;
-        aim.classList.remove('circle-inactive')
+        aim.classList.remove('circle-inactive');
+        timer.classList.remove('hide');
+        startBtn.classList.add('hide');
         stopwatch();
+        gameActive()
       }
     }, (3 - i) * 1000);
   }
@@ -36,6 +42,7 @@ const { cx, cy } = aim;
 let hitCount = 0
 
 aim.addEventListener("click", hit);
+
 //* this is giving a new position to the aim, incrementing the count
 
 function hit(hitted = true) {
@@ -45,29 +52,29 @@ function hit(hitted = true) {
   aim.setAttribute('cy', y);
   if (hitted) {
     hitCount += 1;
-    counter.textContent = `Hit Count : ${hitCount}`
+    counter.textContent = `${hitCount}`
   }
 }
 
 
-let timer = document.querySelector('.stopwatch')
-let [milliseconds, seconds] = [0,3];
-
-console.log(timer)
+let [milliseconds, seconds] = [0,30];
 
 function stopwatch() {
   int = setInterval(moving, 1000);
 }
 
 function moving() {
-  console.log(seconds);
   seconds--;
   if (seconds === 0) {
     clearInterval(int)
+    result()
   }
-  timer.innerHTML = `${seconds}`
+  timer.innerHTML = `${seconds}.`
 }
 
+function result() {
+  console.log("ok dak")
+}
 
 
 
@@ -77,12 +84,15 @@ function moving() {
 
 
 //* this is the wave fonction, might be use better to the misses count
+
 let btnTop = btn.offsetTop;
 let btnLeft = btn.offsetLeft;
+let missedClick = 0;
 
-(function(){
-  
+function gameActive(){  
   btn.addEventListener('click',function(e){
+    missedClick += 1;
+    miss.innerHTML = `${missedClick - hitCount}`
     let div = document.createElement('div');
     div.classList.add('wave');
     div.style.left = e.clientX - btnLeft + 'px';
@@ -102,4 +112,4 @@ let btnLeft = btn.offsetLeft;
       btn.classList.remove('btn-active');
     });
     
-  })();
+  };
