@@ -10,19 +10,27 @@ let timer = document.querySelector('.stopwatch')
 let countdown = document.createElement('h2');
 countdown.classList.add('countdown');
 
-startBtn.addEventListener("click", start)
 
-//*
+//* this is updating the board hit and miss, i guess they never miss
+
+function updateBoard() {
+  counter.textContent = `${hitCount}`
+  miss.textContent = `${missClickCount - hitCount}`
+}
+
+startBtn.addEventListener("click", start)
 
 function start() {
   startBtn.removeEventListener('click', start);
-  hitCount = 0
-  missedClick = 0
+  // as the game begging everyone should have a chance to take a fresh start
+  hitCount = 0;
+  missClickCount = 0;
+  updateBoard();
+
   btn.appendChild(countdown);
   for(let i = 3; i >= 0 ; i--){
     setTimeout(() => {
       countdown.innerText = `${i}`;
-      // countdown.classList.toggle("countdown-active");
       if(i === 0) {
         countdown.remove();
         hit(false);
@@ -32,7 +40,9 @@ function start() {
         startBtn.classList.add('hide');
         seconds = 3;
         stopwatch();
-        gameActive();
+        btn.addEventListener('click', clicking)
+
+        // gameActive();
       }
     }, (3 - i) * 1000);
   }
@@ -55,10 +65,9 @@ function hit(hitted = true) {
   aim.setAttribute('cy', y);
   if (hitted) {
     hitCount += 1;
-    counter.textContent = `${hitCount}`
+    updateBoard();
   }
 }
-
 
 let [milliseconds, seconds] = [0,10];
 
@@ -79,49 +88,52 @@ function moving() {
 
 let btnTop = btn.offsetTop;
 let btnLeft = btn.offsetLeft;
-let missedClick = 0;
+let missClickCount = 0;
 
-function gameActive(){
 
-  btn.addEventListener('click', clicking, true)
-  function clicking(e) {
-    missedClick += 1;
-    miss.innerHTML = `${missedClick - hitCount}`
-    let div = document.createElement('div');
-    div.classList.add('wave');
-    div.style.left = e.clientX - btnLeft + 'px';
-    div.style.top = e.clientY - btnTop + 'px';
-    btn.appendChild(div);
+//! all of this was usefull in the structure before, keep it for legacy ?
+// function gameActive(){
+//   // btn.addEventListener('click', clicking)
+  
+//   //* those might be important, not sur why ??
+//   // btn.addEventListener('mousedown',function(){
+//     //   btn.classList.add('btn-active');
+//     // });
+//     // btn.addEventListener('mousedown',function(){
+//       //   btn.classList.remove('btn-active');
+//       // });
+      
+//     };
 
-    setTimeout(function(){
-      div.classList.add('wave-ani');
-    });
-    setTimeout(function(){
-      btn.removeChild(div);
-      },1500);
-    };
+//* this function handle any click on the area of the game
+//* but not when the aim is hit or not
 
-  btn.addEventListener('mousedown',function(){
-    btn.classList.add('btn-active');
+function clicking(e) {
+missClickCount += 1;
+updateBoard()
+  let div = document.createElement('div');
+  div.classList.add('wave');
+  div.style.left = e.clientX - btnLeft + 'px';
+  div.style.top = e.clientY - btnTop + 'px';
+  btn.appendChild(div);
+
+  setTimeout(function(){
+    div.classList.add('wave-ani');
   });
-  btn.addEventListener('mousedown',function(){
-    btn.classList.remove('btn-active');
-  });
-
+  setTimeout(function(){
+    btn.removeChild(div);
+    },1500);
   };
-
 
 
 //* this is the function that return the result to the user
 //* and stop all the features of the game
 
 function result() {
-  console.log(hitCount);
-  console.log(missedClick);
   aim.classList.add('circle-inactive');
   timer.classList.add('hide');
   startBtn.classList.remove('hide');
-  console.log(`you're accruacy is ${(hitCount / missedClick) * 100}%`);
+  console.log(`you're accruacy is ${(hitCount / missClickCount) * 100}%`);
   startBtn.addEventListener("click", start);
-
+  btn.removeEventListener('click', clicking)
 }
