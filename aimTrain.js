@@ -10,7 +10,7 @@ let timer = document.querySelector('.stopwatch')
 let countdown = document.createElement('h2');
 countdown.classList.add('countdown');
 
-
+let bestScore = 0;
 //* this is updating the board hit and miss, i guess they never miss
 
 function updateBoard() {
@@ -23,6 +23,7 @@ startBtn.addEventListener("click", start)
 function start() {
   startBtn.removeEventListener('click', start);
   // as the game begging everyone should have a chance to take a fresh start
+  
   hitCount = 0;
   missClickCount = 0;
   updateBoard();
@@ -38,7 +39,7 @@ function start() {
         aim.classList.remove('circle-inactive');
         timer.classList.remove('hide');
         startBtn.classList.add('hide');
-        seconds = 3;
+        seconds = 30;
         stopwatch();
         btn.addEventListener('click', clicking)
 
@@ -96,14 +97,13 @@ let missClickCount = 0;
 //   // btn.addEventListener('click', clicking)
   
 //   //* those might be important, not sur why ??
-//   // btn.addEventListener('mousedown',function(){
-//     //   btn.classList.add('btn-active');
-//     // });
-//     // btn.addEventListener('mousedown',function(){
-//       //   btn.classList.remove('btn-active');
-//       // });
+  // btn.addEventListener('mousedown',function(){
+  //     btn.classList.add('btn-active');
+  //   });
+  //   btn.addEventListener('mousedown',function(){
+  //       btn.classList.remove('btn-active');
+  //     });
       
-//     };
 
 //* this function handle any click on the area of the game
 //* but not when the aim is hit or not
@@ -111,29 +111,35 @@ let missClickCount = 0;
 function clicking(e) {
 missClickCount += 1;
 updateBoard()
-  let div = document.createElement('div');
-  div.classList.add('wave');
-  div.style.left = e.clientX - btnLeft + 'px';
-  div.style.top = e.clientY - btnTop + 'px';
-  btn.appendChild(div);
+  // let div = document.createElement('div');
+  // div.classList.add('wave');
+  // div.style.left = e.clientX - btnLeft + 'px';
+  // div.style.top = e.clientY - btnTop + 'px';
+  // btn.appendChild(div);
 
-  setTimeout(function(){
-    div.classList.add('wave-ani');
-  });
-  setTimeout(function(){
-    btn.removeChild(div);
-    },1500);
+  // setTimeout(function(){
+  //   div.classList.add('wave-ani');
+  // });
+  // setTimeout(function(){
+  //   btn.removeChild(div);
+  //   },1500);
   };
 
 
 //* this is the function that return the result to the user
 //* and stop all the features of the game
 
+const displayedBest = document.querySelector('.best')
+
 function result() {
   aim.classList.add('circle-inactive');
   timer.classList.add('hide');
   startBtn.classList.remove('hide');
+  bestScore = hitCount > bestScore ? hitCount : null;
   console.log(`you're accruacy is ${(hitCount / missClickCount) * 100}%`);
+  displayedBest.textContent = `Best ${bestScore}`
+  // btn.appendChild()
+
   startBtn.addEventListener("click", start);
   btn.removeEventListener('click', clicking)
 }

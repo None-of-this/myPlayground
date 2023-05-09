@@ -53,6 +53,7 @@ svg {
     -webkit-user-select:none;
     user-select:none;
     position:relative;
+    cursor: default;
 }
 
 circle {
@@ -137,4 +138,8 @@ circle {
 
 p {
     margin: 0;
+}
+
+.result {
+    width: 60vw;
 }
