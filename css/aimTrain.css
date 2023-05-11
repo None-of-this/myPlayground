@@ -1,7 +1,13 @@
-@import "./wave.css";
+/* @import "./wave.css"; */
+
+@import "./back-waves.css";
+
+:root {
+    --background-color: rgb(178, 255, 89);
+}
 
 body {
-    background-color: #f3f3f3;
+    background-color: var(--background-color);
 }
 
 h1::first-letter {
@@ -46,7 +52,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 }
 
 
-svg {
+.game-view {
     width: 60vw;
     height: 60vh;
     overflow:hidden;
@@ -57,7 +63,9 @@ svg {
 }
 
 circle {
-    color: rgba(67, 0, 190, 0.685);
+    /* fill: var(--background-color); */
+    fill: black;
+    /* filter: invert(100%) */
 }
 
 .circle-inactive {
@@ -96,7 +104,7 @@ circle {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-    svg {
+    .game-view {
         height: 41vh;
     }
 

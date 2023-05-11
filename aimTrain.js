@@ -1,6 +1,6 @@
 // const fireRange = document.querySelector('#fire-range');
 const aim = document.querySelector('circle');
-const svgBox = document.querySelector('svg')
+const svgBox = document.querySelector('.game-view')
 const counter = document.querySelector('.counter')
 const btn = document.querySelector('.btn');
 const miss = document.querySelector('.miss')
@@ -135,7 +135,7 @@ function result() {
   aim.classList.add('circle-inactive');
   timer.classList.add('hide');
   startBtn.classList.remove('hide');
-  bestScore = hitCount > bestScore ? hitCount : null;
+  bestScore = hitCount > bestScore ? hitCount : bestScore;
   console.log(`you're accruacy is ${(hitCount / missClickCount) * 100}%`);
   displayedBest.textContent = `Best ${bestScore}`
   // btn.appendChild()

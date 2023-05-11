@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width,initial-scale=1.0">
- <title></title>
- <link rel="stylesheet" href="./css/aimTrain.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./css/aimTrain.css">
 </head>
+
 <body>
     <div class="container">
+        <div class="wave-box">
+            <svg width="100%" height="50px" viewBox="0 0 20 10" preserveAspectRatio="none">
+                <path class="wave-1" stroke-width=0 
+                d="m -2244.423,-187.86176 c 1056.8717,-345.34982 923.921,38.33601 1673.0528,31.64371 760.78505,-6.79642 926.75615,-336.28944 1561.88185,-316.51884 816.85195,25.42748 890.76585,253.95174 1527.84215,284.87513 V 486.91337 H -2244.423 Z"                
+                ></path>
+                
+            </svg>
+        </div>
         <div class="game-container">
             <h1>Aim </h1>
             <br>
@@ -26,17 +36,21 @@
                     </div>
 
                 </div>
-                    <div class="btn">
-                        <svg>
-                            <circle class="circle-inactive" cx="50" cy="50" r="10" fill="0094ff" />
-                        </svg>
-                    </div>
+                <div class="btn">
+                    <svg class="game-view">
+                        <circle class="circle-inactive" cx="50" cy="50" r="10" />
+                    </svg>
                 </div>
+            </div>
             <div class="box result">
                 <div class="best"> ok this best</div>
             </div>
         </div>
     </div>
+
+
+    </div>
     <script src="aimTrain.js"></script>
 </body>
+
 </html>
