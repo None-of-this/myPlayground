@@ -18,6 +18,7 @@ function updateBoard() {
   miss.textContent = `${missClickCount - hitCount}`
 }
 
+
 startBtn.addEventListener("click", start)
 
 function start() {
