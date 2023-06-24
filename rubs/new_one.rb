@@ -11,7 +11,7 @@ def scraping
     html_doc = Nokogiri::HTML(html_file)
     html_doc.search(".t_yrXoUO3qGsJS4Y6iXX").each do |element| #found the way to get to the class of all tilte
         if i < 1
-            puts ""
+            puts element
             puts ""
             p i
             i += 1
